@@ -18,6 +18,7 @@ namespace UdemySignalR.API.Controllers
         [HttpGet("{teamCount}")]
         public async Task<IActionResult> SetTeamCount(int teamCount)
         {
+            MyHub.TeamCount = teamCount;
             await _hubContext.Clients.All.
                 SendAsync("Notify", $"Arkadaşlar takımlar {teamCount} kişi olacak");
             return Ok();

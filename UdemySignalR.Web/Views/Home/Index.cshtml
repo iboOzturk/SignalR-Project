@@ -28,6 +28,9 @@
                     statusShow();
                     $("#loading").hide();
 
+                    connection.invoke("GetNames");
+
+
                 }).catch((err) => { 
                     console.log(err);
                     setTimeout(()=>Start(),2000)
@@ -64,6 +67,11 @@
                 $("#notify").html('<div class="alert alert-success">'+countText+'</div>')
             })
 
+            connection.on("Error", (errorText) => {
+                alert(errorText);
+            })
+
+
             //Clicks
             $("#btnNameSave").click(() => {
                 connection.invoke("SendName", $("#txtName").val()).catch((err) => {
@@ -76,6 +84,13 @@
                 console.log(name);
                 $('#namesList').append('<li class="list-group-item">' + name + '</li>');
             })
+            connection.on("ReceiveNames", (names) => {
+                $('#namesList').empty();
+                names.forEach((item, index) => {
+                    $('#namesList').append('<li class="list-group-item">' + item + '</li>');
+                })
+            })
+           
         })
 
        
