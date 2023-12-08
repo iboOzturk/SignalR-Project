@@ -1,4 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using UdemySignalR.API.Hubs;
+using UdemySignalR.API.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,13 +12,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<AppDbContext>(x =>
+{
+    x.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
+});
+
 builder.Services.AddSignalR();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder =>
     {
         builder.WithOrigins("https://localhost:44353").AllowAnyHeader().
-        AllowAnyMethod().AllowCredentials();
+        AllowAnyMethod().AllowCredentials().SetIsOriginAllowed((host) => true);
     });
 });
 
