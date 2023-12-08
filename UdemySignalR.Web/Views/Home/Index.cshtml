@@ -108,6 +108,10 @@
                 alert(errorText);
             })
 
+            connection.on("ReceiveProduct", (product) => {
+                console.log(product);
+            })
+
 
             //Clicks
             $("#btnNameSave").click(() => {
@@ -128,7 +132,11 @@
                     console.log(err);
                 })
             })
-           
+            $("#btnProduct").click(() => {
+                let product = { "Id":1, "Name": "Kalem", "Price": 100, "Stock": 200 };
+                connection.invoke("SendProduct", product);
+            })
+
             $("input[type=radio]").change(()=>{
                 let value = $('input[type=radio]:checked').val();
                 if (value == "Team A") {
@@ -152,7 +160,8 @@
         <hr />
         <button class="btn btn-primary" id="btnNameSave">İsim Kaydet</button>
         <button class="btn btn-warning" id="btnNameTeam">Takım Kaydet</button>
-       <hr />
+        <button class="btn btn-danger" id="btnProduct">Ürün Gönder</button>
+        <hr />
         <div class="alert alert-info">
             <div class="float-lg-start">
                 Bağlantı Durumu:<strong id="conStatus"></strong>
