@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34310.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemySignalR.API", "UdemySignalR.API\UdemySignalR.API.csproj", "{078B128C-797B-46A7-9A49-C67FCF094216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemySignalR.API", "UdemySignalR.API\UdemySignalR.API.csproj", "{078B128C-797B-46A7-9A49-C67FCF094216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemySignalR.Web", "UdemySignalR.Web\UdemySignalR.Web.csproj", "{9AF21408-D773-4FF4-AAE7-C7ECA9A03725}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemySignalR.Web", "UdemySignalR.Web\UdemySignalR.Web.csproj", "{9AF21408-D773-4FF4-AAE7-C7ECA9A03725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovidChart.API", "CovidChart.API\CovidChart.API.csproj", "{4186A2CC-09F8-41C0-9FA9-A28841FA2460}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9AF21408-D773-4FF4-AAE7-C7ECA9A03725}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AF21408-D773-4FF4-AAE7-C7ECA9A03725}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AF21408-D773-4FF4-AAE7-C7ECA9A03725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4186A2CC-09F8-41C0-9FA9-A28841FA2460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4186A2CC-09F8-41C0-9FA9-A28841FA2460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4186A2CC-09F8-41C0-9FA9-A28841FA2460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4186A2CC-09F8-41C0-9FA9-A28841FA2460}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
